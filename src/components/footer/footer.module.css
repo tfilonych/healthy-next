@@ -1,0 +1,12 @@
+.footer {
+  height: 5.7rem;
+  padding: 3.57rem;
+  background: #36465a;
+  color: white;
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+}

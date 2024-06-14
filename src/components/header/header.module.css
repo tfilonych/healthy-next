@@ -1,0 +1,81 @@
+.topPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 0.8rem 2rem;
+
+  .loginBtn {
+    /* @extend %button; */
+    border: 1px solid;
+    transition: all 0.5s ease;
+    color: white;
+    background: transparent;
+
+    &:hover {
+      background: lighten(black, 10%);
+      transition: all 0.5s ease;
+    }
+
+    &:active {
+      transform: scale(0.9);
+      transition: all 0.5s ease;
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 4.2rem;
+    height: 2.4rem;
+
+    /* input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+  
+        &:checked + .slider {
+          background-color: transparent;
+          border: 1px solid;
+          color: white;
+  
+          &:before {
+            transform: translateX(1.8rem);
+            background-color: white;
+          }
+        }
+      } */
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+    border: 1px solid;
+    color: white;
+
+    &:before {
+      position: absolute;
+      content: '';
+      height: 1.8rem;
+      width: 1.8rem;
+      left: 0.2rem;
+      bottom: 0.2rem;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+  }
+
+  .slider.round {
+    border-radius: 2.4rem;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}

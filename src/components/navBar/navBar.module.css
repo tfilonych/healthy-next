@@ -1,0 +1,128 @@
+.navigation {
+  height: auto;
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    position: relative;
+    gap: 3rem;
+    padding: 2rem;
+
+    .link {
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        color: burlywood;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      border: 1px solid white;
+      top: 0;
+      left: 50%;
+      width: 80%;
+      max-width: 85.7rem;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 0;
+
+    .nav {
+      flex-direction: column;
+      width: 100%;
+      transform: translateX(-200px);
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+      pointer-events: auto;
+      z-index: -1;
+      gap: 0;
+      padding: 0;
+      background: #36455ae3;
+      color: white;
+
+      &:before {
+        content: '';
+        display: block;
+        border: 1px solid white;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .link {
+        color: white;
+        line-height: 2.5rem;
+        padding: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+
+    .nav-icon {
+      margin: 1em;
+      width: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+      top: 0.5rem;
+      left: 1rem;
+      pointer-events: auto;
+    }
+
+    .nav-icon:after,
+    .nav-icon:before,
+    .nav-icon div {
+      background-color: white;
+      border-radius: 0.28rem;
+      content: '';
+      display: block;
+      height: 0.2rem;
+      margin: 0.4rem 0;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &:focus-within {
+      .nav {
+        transform: none;
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+        z-index: 1;
+      }
+
+      .nav-icon {
+        cursor: pointer;
+      }
+
+      .nav-icon,
+      .logo-sm {
+        pointer-events: none;
+      }
+
+      .nav-icon:before {
+        transform: translateY(0.6rem) rotate(135deg);
+      }
+
+      .nav-icon:after {
+        transform: translateY(-0.6rem) rotate(-135deg);
+      }
+
+      .nav-icon div {
+        transform: scale(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.article {
+  padding: 2rem 0;
+  font-family: 'Kalam-Light';
+
+  .title,
+  .description,
+  .section {
+    padding-bottom: 1rem;
+  }
+
+  .title,
+  .titleSm {
+    color: #deb987;
+    font-size: 1.4rem;
+    font-family: 'Kalam-Regular';
+  }
+}
